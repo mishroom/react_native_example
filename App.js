@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, View, Text, StyleSheet, TextInput } from 'react-native';
+import { AppRegistry, ScrollView, Text, StyleSheet, TextInput, View } from 'react-native';
 import Search from './Search.js';
 import VideoList from './VideoList.js';
 import VideoPlayer from './VideoPlayer.js';
@@ -179,6 +179,7 @@ export default class App extends Component {
       videos: exampleVideoData,
       currentVideo: exampleVideoData[0]
     };
+    this.handleVideoListEntryTitleClick = this.handleVideoListEntryTitleClick.bind(this);
   }
 
   componentDidMount() {
@@ -208,15 +209,15 @@ export default class App extends Component {
 
 
   render() {
-    // console.log(this.state.currentVideo);
     return (  
-      <View style={{flex: 1}}>
+      <View >
         <Search />
         <VideoPlayer video={this.state.currentVideo}/>
-        <VideoList videos={this.state.videos}/>
+        <VideoList videos={this.state.videos} handleVideoListEntryTitleClick={this.handleVideoListEntryTitleClick} />
       </View>
       );
   }
 };
 
 
+// style={{flex: 1}}

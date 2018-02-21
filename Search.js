@@ -12,22 +12,28 @@ export default class Search extends Component {
   }
   render() {
     return (
-      <View style={{flex: 1}}>
+      <View >
         <Text>
           Enter Search Here:
         </Text>
-      	<TextInput
-        style={{height: 70, borderColor: 'black', borderWidth: 2}}
-        onChange={(text)=> {console.log("butt"); this.setState({query: text})}}
-        value={this.state.query}
-      />
-      <Button
-        onPress={this.onSearch}
-        title="Search Video"
-        color="#FF0000"
-      />
+        <View  style={{flexDirection: 'row'}}>
+          <View  style={{width: 390, height: 40}}>
+          	<TextInput
+            style={{height: 35, borderColor: 'black', borderWidth: 2}}
+            onChange={(text)=> this.setState({query: text})}
+            value={this.state.query}
+            />
+        </View>
+        <View  style={{width: 80, height: 40}}>
+          <Button
+            onPress={this.onSearch}
+            title="Search"
+            color="#FF0000"
+          />
+        </View>
+      </View>
       </View>
     )
   }
 }
-
+ // style={{flex: 1}}

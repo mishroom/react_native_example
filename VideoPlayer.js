@@ -6,10 +6,13 @@ export default class VideoPlayer extends Component {
 	}
 
 	render() {
-		console.log("PROPS IN VPLAYER", this.props.video);
 		return (
-			<View style={{flex: 2}}>
-				<Text> {this.props.video.snippet.title}</Text>
+			<View style={{paddingVertical:20, flex: 1, }}>
+				<View style={{alignItems: 'center'}}>
+					<Text 
+						style={{fontWeight: 'bold', fontSize: 20}}
+					> {this.props.video.snippet.title}</Text>
+				</View>
 				<WebView
 					source={{uri: `https://www.youtube.com/embed/${this.props.video.id.videoId}`}}
 	        style={{marginTop:0}}/>
@@ -20,3 +23,4 @@ export default class VideoPlayer extends Component {
 
 }
 
+ // style={{flex: 2}}

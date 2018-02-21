@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, View, Text, StyleSheet } from 'react-native';
+import { AppRegistry, ScrollView, Text, StyleSheet, View } from 'react-native';
 import VideoListEntry from './VideoListEntry.js'
 
 export default class VideoList extends Component {
@@ -9,15 +9,18 @@ export default class VideoList extends Component {
 
   render() {
     return (
-      <View style={{flex: 3}}>
-        <Text> Video List here </Text>
+      <ScrollView>
+      	<View style={{paddingVertical:20}}>
         {this.props.videos.map((video) =>
 		      <VideoListEntry
 		        key={video.etag}
 		        video={video}
+		        handleVideoListEntryTitleClick={this.props.handleVideoListEntryTitleClick}
 		      />
 		    )}
-      </View>
+		    </View>
+      </ScrollView>
       )
     }
   }
+  // style={{flex: 3}}
