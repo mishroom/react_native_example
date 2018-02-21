@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, ScrollView, Text, StyleSheet, TextInput, View } from 'react-native';
+import { AppRegistry, ScrollView, Text, StyleSheet, TextInput, View, Alert } from 'react-native';
 import Search from './Search.js';
 import VideoList from './VideoList.js';
 import VideoPlayer from './VideoPlayer.js';
